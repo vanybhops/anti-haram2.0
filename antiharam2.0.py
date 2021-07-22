@@ -4,26 +4,34 @@ import getpass
 from collections import Counter
 import socket
 import threading
-try:
-    import speech_recognition as sr
-    import pyttsx3
-    from winrt.windows.ui.notifications import ToastNotificationManager, ToastNotification
-    import winrt.windows.data.xml.dom as dom
-    from scapy.all import sniff
-except Exception as AttributeError:
-    if(str(AttributeError)=="No module named 'pyttsx3'"):
-        os.system("pip install pyttsx3")
-        import pyttsx3
-    elif(str(AttributeError)=="No module named 'speech_recognition'"):
-        os.system("pip install SpeechRecognition")
+while True:
+    try:
         import speech_recognition as sr
-    elif(str(AttributeError)=="No module named 'winrt'"):
-        os.system("pip install winrt")
+        import pyttsx3
         from winrt.windows.ui.notifications import ToastNotificationManager, ToastNotification
         import winrt.windows.data.xml.dom as dom
-    elif("scapy"in str(AttributeError)):
-        os.system("pip install scapy")
         from scapy.all import sniff
+        import pyaudio
+        break
+    except Exception as AttributeError:
+        if(str(AttributeError)=="No module named 'pyttsx3'"):
+            os.system("pip install pyttsx3")
+            import pyttsx3
+        elif(str(AttributeError)=="No module named 'speech_recognition'"):
+            os.system("pip install SpeechRecognition")
+            import speech_recognition as sr
+        elif(str(AttributeError)=="No module named 'winrt'"):
+            os.system("pip install winrt")
+            from winrt.windows.ui.notifications import ToastNotificationManager, ToastNotification
+            import winrt.windows.data.xml.dom as dom
+        elif("scapy"in str(AttributeError)):
+            os.system("pip install scapy")
+            from scapy.all import sniff
+        elif("pyaudio" in str(AttributeError)):
+            os.system("pip install pipwin")
+            os.system("pipwin install pyaudio")
+        else:
+            pass
 
 USER_NAME = getpass.getuser()
 def add_to_startup(file_path=""):
