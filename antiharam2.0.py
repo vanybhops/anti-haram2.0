@@ -72,7 +72,7 @@ def Microphoneharam():
                     appid=r'Anti HARAM 2.0'
                     notifier = ToastNotificationManager.create_toast_notifier(appid)
                     title="ANTI-HARAM 2.0 bad word spotted"
-                    descreal="I hope that Allah has mercy on your soul!"
+                    descreal="I hope that God has mercy on your soul!"
                     tString = """<toast duration='short'><audio src  = 'ms-winsoundevent:Notification.Reminder' loop = 'false' silent = 'false'/><visual><binding template='ToastText02'><text id="1">""" + title + """</text><text id="2">""" + descreal + """</text></binding></visual></toast>"""
                     xDoc = dom.XmlDocument()
                     xDoc.load_xml(tString)
@@ -84,7 +84,7 @@ def Microphoneharam():
                     appid=r'Anti HARAM 2.0'
                     notifier = ToastNotificationManager.create_toast_notifier(appid)
                     title="ANTI-HARAM 2.0 bad word spotted"
-                    descreal="I hope that Allah has mercy on your soul!"
+                    descreal="I hope that Godhas mercy on your soul!"
                     tString = """<toast duration='short'><audio src  = 'ms-winsoundevent:Notification.Reminder' loop = 'false' silent = 'false'/><visual><binding template='ToastText02'><text id="1">""" + title + """</text><text id="2">""" + descreal + """</text></binding></visual></toast>"""
                     xDoc = dom.XmlDocument()
                     xDoc.load_xml(tString)
